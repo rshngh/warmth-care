@@ -213,8 +213,8 @@ const ChatPage = () => {
           loading...
         </div>
       ) : (
-        <div className="flex items-center justify-center pt-4  ">
-          <div className="bg-base-100 p-2 rounded-lg w-full max-w-6xl h-[calc(100vh-9rem)] ">
+        <div className="flex items-center justify-center pt-2 ">
+          <div className="bg-base-100 rounded-lg w-full max-w-6xl h-[calc(100vh-9rem)] ">
             <div className="flex flex-col-reverse h-full rounded-lg overflow-auto ">
               <ChatBox
                 authUser={authUser}
@@ -240,23 +240,23 @@ const ChatPage = () => {
                 </svg>
               )}
             </div>
-            <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0 mb-2">
-              <input
-                type="text"
-                placeholder="Type here"
-                className=" w-full m-auto  "
-                value={newMessage}
-                onChange={(e) => setNewMessage(e.target.value)}
-              />
-              <button
-                type="submit"
-                className="btn btn-primary m-auto"
-                disabled={!newMessage.trim()}
-                onClick={(e) => sendMessage(e)}>
-                Send
-              </button>
-            </form>
           </div>
+          <form className="max-w-6xl m-auto absolute inset-x-0 bottom-0 flex justify-end input input-bordered pr-0 ">
+            <input
+              type="text"
+              placeholder="Type here"
+              className=" w-full m-auto  "
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="btn btn-primary m-auto"
+              disabled={!newMessage.trim()}
+              onClick={(e) => sendMessage(e)}>
+              Send
+            </button>
+          </form>
         </div>
       )}
     </div>
